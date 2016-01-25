@@ -1,7 +1,6 @@
-FROM sshd:dockerfile
+FROM apache:ubuntu
 MAINTAINER heidan from dcokerpool.com(xxx)
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -yq install apache2 && rm -rf /var/lib/apt/lists/*
 RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninterative tzdata
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
